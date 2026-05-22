@@ -1,35 +1,171 @@
 function Navbar() {
+
     return (
-        <nav className="sticky top-0 z-50 glass-panel border-b border-gray-200" data-name="navbar" data-file="components/Navbar.js">
+
+        <nav className="sticky top-0 z-50 glass-panel border-b border-gray-200 bg-white/90 backdrop-blur-md shadow-sm">
+
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
                 <div className="flex justify-between h-16 items-center">
-                    <div className="flex items-center gap-2 cursor-pointer" onClick={() => window.location.href = 'index.html'}>
-                        <div className="w-8 h-8 rounded bg-[var(--primary-color)] flex items-center justify-center text-white">
-                            <div className="icon-briefcase"></div>
+
+                    {/* LOGO */}
+
+                    <div
+                        className="flex items-center gap-3 cursor-pointer"
+                        onClick={() => window.location.href = 'index.html'}
+                    >
+
+                        <div className="w-10 h-10 rounded-xl bg-[var(--primary-color)] flex items-center justify-center text-white shadow-md">
+
+                            <div className="icon-briefcase text-lg"></div>
+
                         </div>
-                        <span className="text-xl font-bold text-gray-900">JobHub</span>
+
+                        <span className="text-2xl font-extrabold text-gray-900 tracking-tight">
+
+                            JobHub
+
+                        </span>
+
                     </div>
-                    
-                    <div className="hidden md:flex space-x-6">
-                        <a href="index.html" className="text-gray-900 font-medium hover:text-[var(--primary-color)]">Home</a>
-                        <a href="jobs.html" className="text-gray-500 font-medium hover:text-[var(--primary-color)]">Find Jobs</a>
-                        <a href="user-dashboard.html" className="text-gray-500 font-medium hover:text-[var(--primary-color)]">User Dashboard</a>
-                        <a href="admin-dashboard.html" className="text-gray-500 font-medium hover:text-[var(--primary-color)]">Admin Dashboard</a>
+
+                    {/* DESKTOP MENU */}
+
+                    <div className="hidden md:flex items-center space-x-8">
+
+                        <a
+                            href="index.html"
+                            className="text-gray-700 font-semibold hover:text-[var(--primary-color)] transition"
+                        >
+                            Home
+                        </a>
+
+                        <a
+                            href="jobs.html"
+                            className="text-gray-700 font-semibold hover:text-[var(--primary-color)] transition"
+                        >
+                            Find Jobs
+                        </a>
+
+                        <a
+                            href="user-dashboard.html"
+                            className="text-gray-700 font-semibold hover:text-[var(--primary-color)] transition"
+                        >
+                            User Dashboard
+                        </a>
+
+                        <a
+                            href="admin-dashboard.html"
+                            className="text-gray-700 font-semibold hover:text-[var(--primary-color)] transition"
+                        >
+                            Admin Dashboard
+                        </a>
+
                     </div>
+
+                    {/* AUTH BUTTONS */}
 
                     <div className="hidden md:flex items-center space-x-4">
-                        <a href="login.html" className="text-gray-600 hover:text-gray-900 font-medium">Log in</a>
-                        <a href="register.html" className="btn btn-primary">Sign up</a>
+
+                        <a
+                            href="login.html"
+                            className="text-gray-700 hover:text-[var(--primary-color)] font-semibold transition"
+                        >
+                            Log in
+                        </a>
+
+                        <a
+                            href="register.html"
+                            className="bg-[var(--primary-color)] hover:bg-blue-700 text-white px-5 py-2.5 rounded-xl font-semibold shadow-md transition"
+                        >
+                            Sign Up
+                        </a>
+
                     </div>
 
-                    <div className="md:hidden flex items-center">
-                        <button className="text-gray-500 hover:text-gray-900">
-                            <div className="icon-menu text-2xl"></div>
+                    {/* MOBILE MENU */}
+
+                    <div className="md:hidden">
+
+                        <button
+                            className="text-gray-700 hover:text-[var(--primary-color)]"
+                            onClick={() => {
+
+                                const mobileMenu =
+                                    document.getElementById("mobile-menu");
+
+                                mobileMenu.classList.toggle("hidden");
+
+                            }}
+                        >
+
+                            <div className="icon-menu text-3xl"></div>
+
                         </button>
+
                     </div>
+
                 </div>
+
             </div>
+
+            {/* MOBILE DROPDOWN */}
+
+            <div
+                id="mobile-menu"
+                className="hidden md:hidden bg-white border-t border-gray-200 shadow-lg"
+            >
+
+                <div className="px-4 py-4 space-y-4">
+
+                    <a
+                        href="index.html"
+                        className="block text-gray-700 font-medium hover:text-[var(--primary-color)]"
+                    >
+                        Home
+                    </a>
+
+                    <a
+                        href="jobs.html"
+                        className="block text-gray-700 font-medium hover:text-[var(--primary-color)]"
+                    >
+                        Find Jobs
+                    </a>
+
+                    <a
+                        href="user-dashboard.html"
+                        className="block text-gray-700 font-medium hover:text-[var(--primary-color)]"
+                    >
+                        User Dashboard
+                    </a>
+
+                    <a
+                        href="admin-dashboard.html"
+                        className="block text-gray-700 font-medium hover:text-[var(--primary-color)]"
+                    >
+                        Admin Dashboard
+                    </a>
+
+                    <a
+                        href="login.html"
+                        className="block text-gray-700 font-medium hover:text-[var(--primary-color)]"
+                    >
+                        Log in
+                    </a>
+
+                    <a
+                        href="register.html"
+                        className="block bg-[var(--primary-color)] text-white text-center py-3 rounded-xl font-semibold"
+                    >
+                        Sign Up
+                    </a>
+
+                </div>
+
+            </div>
+
         </nav>
+
     );
 }
 
