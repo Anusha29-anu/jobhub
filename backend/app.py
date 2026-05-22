@@ -8,7 +8,6 @@ CORS(app)
 
 # DATABASE CONFIG
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///jobs.db'
-
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
@@ -74,6 +73,68 @@ def add_job():
         "message": "Job Added Successfully"
 
     })
+
+# ADD SAMPLE JOBS
+@app.route('/add-sample-jobs')
+def add_sample_jobs():
+
+    sample_jobs = [
+
+        Job(
+            title="Frontend Developer",
+            company="Google",
+            location="Hyderabad"
+        ),
+
+        Job(
+            title="Backend Developer",
+            company="Microsoft",
+            location="Bangalore"
+        ),
+
+        Job(
+            title="Full Stack Developer",
+            company="Amazon",
+            location="Chennai"
+        ),
+
+        Job(
+            title="UI/UX Designer",
+            company="Adobe",
+            location="Mumbai"
+        ),
+
+        Job(
+            title="Data Analyst",
+            company="Infosys",
+            location="Pune"
+        ),
+
+        Job(
+            title="Software Engineer",
+            company="TCS",
+            location="Delhi"
+        ),
+
+        Job(
+            title="React Developer",
+            company="Wipro",
+            location="Hyderabad"
+        ),
+
+        Job(
+            title="Python Developer",
+            company="Accenture",
+            location="Noida"
+        )
+
+    ]
+
+    db.session.add_all(sample_jobs)
+
+    db.session.commit()
+
+    return "Sample Jobs Added Successfully"
 
 # RUN SERVER
 if __name__ == '__main__':

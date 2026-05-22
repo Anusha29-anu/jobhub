@@ -1,9 +1,9 @@
 const { useState, useEffect } = React;
 
-
 class ErrorBoundary extends React.Component {
 
   constructor(props) {
+
     super(props);
 
     this.state = {
@@ -13,6 +13,7 @@ class ErrorBoundary extends React.Component {
   }
 
   static getDerivedStateFromError(error) {
+
     return {
       hasError: true,
       error
@@ -20,6 +21,7 @@ class ErrorBoundary extends React.Component {
   }
 
   componentDidCatch(error, errorInfo) {
+
     console.error(
       'ErrorBoundary caught an error:',
       error,
@@ -32,6 +34,7 @@ class ErrorBoundary extends React.Component {
     if (this.state.hasError) {
 
       return (
+
         <div className="min-h-screen flex items-center justify-center bg-gray-50">
 
           <div className="text-center p-8 bg-white rounded-xl shadow-sm">
@@ -65,305 +68,302 @@ class ErrorBoundary extends React.Component {
 
 function Hero() {
 
-    return (
-        <div className="bg-white relative overflow-hidden">
+  return (
 
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-24 text-center">
+    <div className="bg-white relative overflow-hidden">
 
-                <h1 className="text-4xl md:text-6xl font-extrabold text-gray-900 tracking-tight mb-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-24 text-center">
 
-                    Find your
-                    <span className="text-[var(--primary-color)]">
-                        dream job
-                    </span>
+        <h1 className="text-4xl md:text-6xl font-extrabold text-gray-900 tracking-tight mb-6">
 
-                    <br/>
+          Find your
 
-                    and build your career
+          <span className="text-[var(--primary-color)]">
+            dream job
+          </span>
 
-                </h1>
+          <br />
 
-                <p className="text-lg md:text-xl text-gray-500 max-w-2xl mx-auto mb-10">
+          and build your career
 
-                    Discover jobs from top companies around the globe.
+        </h1>
 
-                </p>
+        <p className="text-lg md:text-xl text-gray-500 max-w-2xl mx-auto mb-10">
 
-                <div className="max-w-4xl mx-auto bg-white p-2 rounded-2xl shadow-lg border border-gray-100 flex flex-col md:flex-row gap-2">
+          Discover jobs from top companies around the globe.
 
-                    <div className="flex-1 flex items-center px-4 bg-gray-50 rounded-xl">
+        </p>
 
-                        <div className="icon-search text-gray-400 text-xl mr-3"></div>
+        <div className="max-w-4xl mx-auto bg-white p-2 rounded-2xl shadow-lg border border-gray-100 flex flex-col md:flex-row gap-2">
 
-                        <input
-                            type="text"
-                            placeholder="Job title, keywords, or company"
-                            className="w-full bg-transparent border-none focus:outline-none py-3 text-gray-700 placeholder-gray-400"
-                        />
+          <div className="flex-1 flex items-center px-4 bg-gray-50 rounded-xl">
 
-                    </div>
+            <div className="icon-search text-gray-400 text-xl mr-3"></div>
 
-                    <button className="btn btn-primary py-3 px-8 text-lg w-full md:w-auto">
+            <input
+              type="text"
+              placeholder="Job title, keywords, or company"
+              className="w-full bg-transparent border-none focus:outline-none py-3 text-gray-700 placeholder-gray-400"
+            />
 
-                        Search Jobs
+          </div>
 
-                    </button>
+          <button className="btn btn-primary py-3 px-8 text-lg w-full md:w-auto">
 
-                </div>
+            Search Jobs
 
-            </div>
+          </button>
 
         </div>
-    );
+
+      </div>
+
+    </div>
+  );
 }
 
 function Categories() {
 
-    return (
+  return (
 
-        <section className="py-20 bg-gray-50">
+    <section className="py-20 bg-gray-50">
 
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-                <div className="flex justify-between items-end mb-12">
+        <div className="flex justify-between items-end mb-12">
 
-                    <div>
+          <div>
 
-                        <h2 className="text-3xl font-bold text-gray-900 mb-4">
-                            Explore by Category
-                        </h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+              Explore by Category
+            </h2>
 
-                        <p className="text-gray-500">
-                            Find the role that best suits your skills
-                        </p>
+            <p className="text-gray-500">
+              Find the role that best suits your skills
+            </p>
 
-                    </div>
+          </div>
 
-                </div>
+        </div>
 
-                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
 
-                    {window.DUMMY_DATA.categories.map(category => (
+          {window.DUMMY_DATA.categories.map(category => (
 
-                        <div
-                            key={category.id}
-                            className="card p-6 text-center cursor-pointer group hover:border-[var(--primary-color)]"
-                        >
+            <div
+              key={category.id}
+              className="card p-6 text-center cursor-pointer group hover:border-[var(--primary-color)]"
+            >
 
-                            <div className="w-12 h-12 mx-auto rounded-full bg-blue-50 flex items-center justify-center text-[var(--primary-color)] group-hover:bg-[var(--primary-color)] group-hover:text-white transition-colors mb-4">
+              <div className="w-12 h-12 mx-auto rounded-full bg-blue-50 flex items-center justify-center text-[var(--primary-color)] group-hover:bg-[var(--primary-color)] group-hover:text-white transition-colors mb-4">
 
-                                <div className={`${category.icon} text-2xl`}></div>
+                <div className={`${category.icon} text-2xl`}></div>
 
-                            </div>
+              </div>
 
-                            <h3 className="font-semibold text-gray-900 mb-1">
-                                {category.name}
-                            </h3>
+              <h3 className="font-semibold text-gray-900 mb-1">
+                {category.name}
+              </h3>
 
-                            <p className="text-sm text-gray-500">
-                                {category.count} Jobs
-                            </p>
-
-                        </div>
-
-                    ))}
-
-                </div>
+              <p className="text-sm text-gray-500">
+                {category.count} Jobs
+              </p>
 
             </div>
 
-        </section>
+          ))}
 
-    );
+        </div>
+
+      </div>
+
+    </section>
+  );
 }
 
 function FeaturedJobs() {
 
-    const [jobs, setJobs] = useState([]);
+  const [jobs, setJobs] = useState([]);
 
-    useEffect(() => {
+  useEffect(() => {
 
-        fetchJobs();
+    fetchJobs();
 
-    }, []);
+  }, []);
 
-    async function fetchJobs() {
+  async function fetchJobs() {
 
-        try {
+    try {
 
-            const response = await axios.get(
-                'http://127.0.0.1:5000/jobs'
-            );
+      const response = await axios.get(
+        'https://my-jobhub-backend.onrender.com/jobs'
+      );
 
-            console.log("Jobs from Flask:", response.data);
+      console.log("Jobs from Flask:", response.data);
 
-            setJobs(response.data);
+      setJobs(response.data);
 
-        } catch(error) {
+    } catch (error) {
 
-            console.log("API Error:", error);
+      console.log("API Error:", error);
 
-        }
     }
+  }
 
-    return (
+  return (
 
-        <section className="py-20 bg-white">
+    <section className="py-20 bg-white">
 
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-                <div className="flex justify-between items-end mb-12">
+        <div className="flex justify-between items-end mb-12">
 
-                    <div>
+          <div>
 
-                        <h2 className="text-3xl font-bold text-gray-900 mb-4">
-                            Featured Jobs
-                        </h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+              Featured Jobs
+            </h2>
 
-                        <p className="text-gray-500">
-                            Hand-picked opportunities for you
-                        </p>
+            <p className="text-gray-500">
+              Hand-picked opportunities for you
+            </p>
 
-                    </div>
+          </div>
 
-                </div>
+        </div>
 
-                <div className="space-y-6">
+        <div className="space-y-6">
 
-                    {jobs.length > 0 ? (
+          {jobs.length > 0 ? (
 
-                        jobs.map(job => (
+            jobs.map(job => (
 
-                            <div
-                                key={job.id}
-                                className="card p-6"
-                            >
+              <div
+                key={job.id}
+                className="card p-6"
+              >
 
-                                <h2 className="text-xl font-bold text-gray-900">
-                                    {job.title}
-                                </h2>
+                <h2 className="text-xl font-bold text-gray-900">
+                  {job.title}
+                </h2>
 
-                                <p className="text-gray-600 mt-2">
-                                    {job.company}
-                                </p>
+                <p className="text-gray-600 mt-2">
+                  {job.company}
+                </p>
 
-                                <p className="text-gray-500">
-                                    {job.location}
-                                </p>
+                <p className="text-gray-500">
+                  {job.location}
+                </p>
 
-                            </div>
+              </div>
 
-                        ))
+            ))
 
-                    ) : (
+          ) : (
 
-                        <p className="text-gray-500">
-                            Loading jobs...
-                        </p>
+            <p className="text-gray-500">
+              Loading jobs...
+            </p>
 
-                    )}
+          )}
 
-                </div>
+        </div>
 
-            </div>
+      </div>
 
-        </section>
-
-    );
+    </section>
+  );
 }
 
 function Stats() {
 
-    return (
+  return (
 
-        <section className="py-16 bg-[var(--primary-color)]">
+    <section className="py-16 bg-[var(--primary-color)]">
 
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center divide-y md:divide-y-0 md:divide-x divide-blue-400">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center divide-y md:divide-y-0 md:divide-x divide-blue-400">
 
-                    <div className="py-6 md:py-0">
+          <div className="py-6 md:py-0">
 
-                        <h3 className="text-4xl font-bold text-white mb-2">
-                            1200+
-                        </h3>
+            <h3 className="text-4xl font-bold text-white mb-2">
+              1200+
+            </h3>
 
-                        <p className="text-blue-100 font-medium">
-                            Active Jobs
-                        </p>
+            <p className="text-blue-100 font-medium">
+              Active Jobs
+            </p>
 
-                    </div>
+          </div>
 
-                    <div className="py-6 md:py-0">
+          <div className="py-6 md:py-0">
 
-                        <h3 className="text-4xl font-bold text-white mb-2">
-                            300+
-                        </h3>
+            <h3 className="text-4xl font-bold text-white mb-2">
+              300+
+            </h3>
 
-                        <p className="text-blue-100 font-medium">
-                            Companies Hiring
-                        </p>
+            <p className="text-blue-100 font-medium">
+              Companies Hiring
+            </p>
 
-                    </div>
+          </div>
 
-                    <div className="py-6 md:py-0">
+          <div className="py-6 md:py-0">
 
-                        <h3 className="text-4xl font-bold text-white mb-2">
-                            5000+
-                        </h3>
+            <h3 className="text-4xl font-bold text-white mb-2">
+              5000+
+            </h3>
 
-                        <p className="text-blue-100 font-medium">
-                            Candidates Placed
-                        </p>
+            <p className="text-blue-100 font-medium">
+              Candidates Placed
+            </p>
 
-                    </div>
+          </div>
 
-                </div>
+        </div>
 
-            </div>
+      </div>
 
-        </section>
-
-    );
+    </section>
+  );
 }
 
 function App() {
 
-    return (
+  return (
 
-        <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col">
 
-            <window.Navbar />
+      <window.Navbar />
 
-            <main className="flex-grow">
+      <main className="flex-grow">
 
-                <Hero />
+        <Hero />
 
-                <Categories />
+        <Categories />
 
-                <FeaturedJobs />
+        <FeaturedJobs />
 
-                <Stats />
+        <Stats />
 
-            </main>
+      </main>
 
-            <window.Footer />
+      <window.Footer />
 
-        </div>
-
-    );
+    </div>
+  );
 }
 
 const root = ReactDOM.createRoot(
-    document.getElementById('root')
+  document.getElementById('root')
 );
 
 root.render(
 
-    <ErrorBoundary>
+  <ErrorBoundary>
 
-        <App />
+    <App />
 
-    </ErrorBoundary>
-
+  </ErrorBoundary>
 );
