@@ -1,4 +1,5 @@
 Flask
+Flask
 flask-cors
 flask-sqlalchemy
-gunicorngit add .
+gunicorn
